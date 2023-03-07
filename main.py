@@ -1,12 +1,16 @@
 import telegram
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-
+from telegram import *
+from telegram.ext import *
 # Create a Telegram bot instance
 bot = telegram.Bot(token='*')
 
+
+
 # Define the start command handler
 def start(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Welcome to our shop! How can I assist you today?")
+    buttons = [[KeyboardButtonPollType('/help')],[KeyboardButton('/cart')]]
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Welcome to my bot! Choose :",
+        reply_markup=ReplyKeyboardMarkup(buttons))
 
 # Define the help command handler
 def help(update, context):
