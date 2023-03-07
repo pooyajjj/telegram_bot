@@ -2,7 +2,7 @@ import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 # Create a Telegram bot instance
-bot = telegram.Bot(token='6134742025:AAEjpmRto-Sk-DdERreQ_KVr7S2Vj0bGFdk')
+bot = telegram.Bot(token='*')
 
 # Define the start command handler
 def start(update, context):
@@ -56,7 +56,7 @@ def unknown(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="Sorry, I didn't understand that command.")
 
 # Create an Updater instance and add handlers
-updater = Updater(token='your_bot_token', use_context=True)
+updater = Updater(token='*', use_context=True)
 dispatcher = updater.dispatcher
 
 dispatcher.add_handler(CommandHandler('start', start))
